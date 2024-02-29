@@ -1,9 +1,9 @@
-import { useState } from 'react';
-import reactLogo from './assets/react.svg';
-import viteLogo from '/vite.svg';
-import './App.css';
-import ClassCmp from './components/ClassCmp/ClassCmp';
-import FunctionCmp from './components/FunctionCmp/FunctionCmp';
+import { useState } from "react";
+import reactLogo from "./assets/react.svg";
+import viteLogo from "/vite.svg";
+import "./App.css";
+import ClassCmp from "./components/ClassCmp/ClassCmp";
+import FunctionCmp from "./components/FunctionCmp/FunctionCmp";
 //import { Route, Routes, BrowserRouter, Link } from 'react-router-dom';
 function App() {
   const parentFun = (data) => {
@@ -13,9 +13,8 @@ function App() {
     alert(text);
   };
   return (
-    <>
-    </>
-  /*  <BrowserRouter>
+    <></>
+    /*  <BrowserRouter>
       <div>App component</div>
       <div className="nav">
         <ul>

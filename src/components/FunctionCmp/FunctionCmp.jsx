@@ -1,16 +1,14 @@
-import React from 'react';
+import React from "react";
 // function expression
 const FunctionCmp = function (props) {
   const [count, setCount] = React.useState(0);
   const [text, setText] = React.useState("");
-  
+
   const testRef = React.useRef();
   const incrementCounter = function () {
     const currentCount = count + 1;
     setCount(currentCount);
     props.parentFun(currentCount);
-    
-
   };
   const focusRef = function () {
     testRef.current.focus();
