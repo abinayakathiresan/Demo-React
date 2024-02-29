@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
+import axios from 'axios';
 import './Products.css';
 const Products = function () {
+  const [productId, setProductId] = useState('');
   const [name, setName] = useState('');
   const [price, setPrice] = useState('');
   const [products, setProducts] = useState([]);
@@ -10,17 +12,51 @@ const Products = function () {
   const handlePrice = function (event) {
     setPrice(event.target.value);
   };
-  const handler = function (event) {
-    let product = { name: name, price: price };
+  const submitHandler = function (event) {
+    if (productId == "")
+    {
+      let productId = Math.random(5,99);
+      let product = { productId: productId, name: name, price: price };
     let newProducts = [...products];
     newProducts.push(product);
     setProducts(newProducts);
+    }
+    else{
+      let copyProducts =[...products];
+      copyProducts = copyProducts.map(item => {
+        return item.productId === productId ? {productId: productId, name: name, price: price} : item;
+      })
+      setProducts(copyProducts);
+    }
+    
+    handleReset();
   };
+  const handleReset = function () {
+    setProductId("");
+    setName("");
+    setPrice("");
+  }
+  const editHandler = function(item)
+  {
+    setProductId(item.productId);
+    setName(item.name);
+    setPrice(item.price);
+  }
+  const deleteHandler = function(item){
+    let copyProducts = [...products];
+    copyProducts = copyProducts.filter(product => {
+      return product.productId !== item.productId;
+    })
+    setProducts(copyProducts);
+  }
+
+  
   return (
     <>
       <div>
         <h2>Add Product</h2>
       </div>
+      <input type = "hidden" value = {productId}/>
       <div>
         Name: <input type="text" value={name} onChange={handleName} />
       </div>
@@ -36,7 +72,8 @@ const Products = function () {
         </select>
       </div>
       <div>
-        <input type="submit" value="submit" onClick={handler} />
+        <input type="submit" value="submit" onClick={submitHandler} />
+        <input type = "reset" value = "Reset" onClick = {handleReset}/>
       </div>
       <div>
         <h2>Product List</h2>
@@ -49,6 +86,8 @@ const Products = function () {
             <div class="row" key  = {item.name}>
               <div>{item.name}</div>
               <div>{item.price}</div>
+              <div><button onClick = {()=>editHandler(item)}>Edit</button></div>
+              <div><button onClick = {()=>deleteHandler(item)}>Delete</button></div>
             </div>
           );
         })}
