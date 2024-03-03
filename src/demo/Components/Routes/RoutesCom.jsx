@@ -7,14 +7,14 @@ import Products from "../Products/Products";
 
 const RouteCom = function () {
   return (
-    <>
+    <div className="container">
       <Routes>
         <Route path="/" element={<HomeCom />} exact={true} />
         <Route path="/Products" element={<Products />} exact={true} />
         <Route path="/Posts" element={<Post />} exact={true} />
         <Route path="/Contact Us" element={<ContactCom />} exact={true} />
       </Routes>
-    </>
+      </div>
   );
 };
 export default RouteCom;

@@ -4,12 +4,14 @@ import ContactCom from "../../Components/Contact Us/ContactUs";
 import Products from "../../Components/Products/Products";
 import HomeCom from "../../Components/Home/Home";
 import RouteCom from "../Routes/RoutesCom";
-
+import "./LayoutCmp.css";
 const Layout = function () {
   return (
     <>
       <BrowserRouter>
-        <div>
+        <div className="layout__header container">
+          <div className="layout__logo">Logo</div>
+          <div className="layout__nav">
           <ul>
             <li>
               <Link to="/" exact>
@@ -32,6 +34,7 @@ const Layout = function () {
               </Link>
             </li>
           </ul>
+          </div>
         </div>
         <RouteCom />
       </BrowserRouter>
