@@ -6,13 +6,8 @@ const Products = function () {
   const [name, setName] = useState("");
   const [price, setPrice] = useState("");
   const [products, setProducts] = useState([]);
-  const handleName = function (event) {
-    setName(event.target.value);
-  };
-  const handlePrice = function (event) {
-    setPrice(event.target.value);
-  };
-  const submitHandler = function (event) {
+  
+  const submitHandler = function () {
     if (productId == "") {
       let productId = Math.random(5, 99);
       let product = { productId: productId, name: name, price: price };
@@ -56,10 +51,10 @@ const Products = function () {
       </div>
       <input type="hidden" value={productId} />
       <div>
-        Name: <input type="text" value={name} onChange={handleName} />
+        Name: <input type="text" value={name} onChange={(e) => setName(e.target.value)} />
       </div>
       <div>
-        Price: <input type="number" value={price} onChange={handlePrice} />
+        Price: <input type="number" value={price} onChange={(e) => setPrice(e.target.value) }/>
       </div>
       <div>
         Category:
