@@ -18,7 +18,7 @@ const Products = function () {
       let copyProducts = [...products];
       copyProducts = copyProducts.map((item) => {
         return item.productId === productId
-          ? { productId: productId, name: name, price: price }
+          ? { ...item, productId: productId, name: name, price: price }
           : item;
       });
       setProducts(copyProducts);

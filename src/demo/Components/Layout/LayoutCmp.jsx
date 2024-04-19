@@ -33,6 +33,26 @@ const Layout = function () {
                 Contact Us
               </Link>
             </li>
+            <li>
+              <Link to="/counter" exact>
+                Counter
+              </Link>
+            </li>
+            <li>
+              <Link to="/fees" exact>
+                Fees
+              </Link>
+            </li>
+            <li>
+              <Link to="/feesredux/add" exact>
+                Fees Redux
+              </Link>
+            </li>
+            <li>
+              <Link to="/feesList" exact>
+                Fees list
+              </Link>
+            </li>
           </ul>
           </div>
         </div>
