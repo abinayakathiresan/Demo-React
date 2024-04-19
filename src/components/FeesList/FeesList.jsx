@@ -1,12 +1,18 @@
 import React from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { deleteStudent } from "../../state/Slice/feesSlice";
 
 const FeesList= ()=> {
     const {students, isLoading} = useSelector((state)=>state.fees);
     const nav = useNavigate();
+    const dispatch = useDispatch();
     const editHandler = (item)=> {
-        nav("/fees/edit"+item.id);
+        nav("/feesredux/edit/"+item.id);
+    }
+    const deleteHandler = (item)=> {
+        if(confirm("Do you want to delete"))
+        dispatch(deleteStudent(item));
     }
     return(
         <div>{students && students.map((item)=> {

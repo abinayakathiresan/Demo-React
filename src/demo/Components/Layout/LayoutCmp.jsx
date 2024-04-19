@@ -14,42 +14,42 @@ const Layout = function () {
           <div className="layout__nav">
           <ul>
             <li>
-              <Link to="/" exact>
+              <Link to="/" >
                 Home
               </Link>
             </li>
             <li>
-              <Link to="/Products" exact>
+              <Link to="/Products" >
                 Products
               </Link>
             </li>
             <li>
-              <Link to="/Posts" exact>
+              <Link to="/Posts" >
                 Posts
               </Link>
             </li>
             <li>
-              <Link to="/Contact Us" exact>
+              <Link to="/Contact Us" >
                 Contact Us
               </Link>
             </li>
             <li>
-              <Link to="/counter" exact>
+              <Link to="/counter">
                 Counter
               </Link>
             </li>
             <li>
-              <Link to="/fees" exact>
+              <Link to="/fees">
                 Fees
               </Link>
             </li>
             <li>
-              <Link to="/feesredux/add" exact>
+              <Link to="/feesredux/add" >
                 Fees Redux
               </Link>
             </li>
             <li>
-              <Link to="/feesList" exact>
+              <Link to="/feesList">
                 Fees list
               </Link>
             </li>

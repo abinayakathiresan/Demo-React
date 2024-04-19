@@ -1,23 +1,22 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { addStudent } from "../../state/Slice/feesSlice";
-import { useParams } from "react-router-dom";
+import { addStudent, editStudent } from "../../state/Slice/feesSlice";
+import { useNavigate, useParams } from "react-router-dom";
 
 const FeesRedux = ()=> {
-    const [stuId, setId] = useState("");
     const[name, setName] = useState("");
     const[amount, setAmount] = useState("");
     
     const dispatch = useDispatch();
     const {action, id} = useParams();
+    const nav = useNavigate();
     const {students, isLoading} = useSelector((state)=>state.fees);
     let studentObj = students.find((item)=> {
         return item.id == id;
     })
     useEffect(()=>{
-        setId(studentObj.id);
-        setName(studentObj.name);
-        setAmount(studentObj.amount);
+        setName(studentObj?.name);
+        setAmount(studentObj?.amount);
     },[studentObj]);
 
     const handleSubmit = ()=> {
@@ -26,21 +25,18 @@ const FeesRedux = ()=> {
             const id = Math.random(9,999);
             let stuObj = {id: id, name:name, amount: amount};
             dispatch(addStudent(stuObj));
-            nav("/feesList");
-        }
-        else{
-            let copyStudents = [...students];
-            copyStudents =  copyStudents.map((item)=> {
-                return item.id === id ? {...students, name: name, amount:amount} : item;
-            })
             
-
+        }
+        if(action == "edit"){
+           let existingStudent = {...studentObj,name,amount};
+           dispatch(editStudent(existingStudent));
         }
         handleReset();
+        nav("/feesList");
+       
         
     }
     const handleReset = ()=> {
-        setId("");
         setName("");
         setAmount("");
     }

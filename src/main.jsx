@@ -4,9 +4,11 @@ import App from "./App.jsx";
 import "./index.css";
 import HomeCom from "./demo/Components/Home/Home.jsx";
 import Layout from "./demo/Components/Layout/LayoutCmp.jsx";
+import { Provider } from "react-redux";
+import {store} from "./state/store.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <Layout />
+    <Provider store = {store}><Layout /></Provider>
   </React.StrictMode>,
 );

@@ -19,9 +19,12 @@ const RouteCom = function () {
         <Route path="/Contact Us" element={<ContactCom />} exact={true} />
         <Route path="/counter" element={< Counter/>} exact={true} />
         <Route path="/fees" element={< Fees/>} exact={true} />
-        <Route path="/feesredux/:action" element={< FeesRedux/>} exact={true} />
-        <Route path="/feesList" element={< FeesList/>} exact={true} />
         <Route path="/fees/:action/:id" element={< Fees/>} exact={true} />
+        <Route path="/feesredux/:action/:id" element={< FeesRedux/>} exact={true} />
+        <Route path="/feesredux/:action" element={< FeesRedux/>} exact={true} />
+        
+        <Route path="/feesList" element={< FeesList/>} exact={true} />
+        
       </Routes>
       </div>
   );
