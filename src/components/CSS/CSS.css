@@ -1,8 +1,25 @@
+.css__parent
+{
+   
+}
 .css__child{
     height: 50px;
     color: black;
     font-size: 24px;
     text-align: center;
+    
+    
+}
+
+.css__child:first-child{
+
+}
+
+.css__child:last-child{
+    
+}
+
+.css__child:nth-child(2){
     
 }
 
@@ -10,14 +27,16 @@
     background-color: rgb(156, 32, 32);
 }
 .child2 {
-    background-color: rgb(158, 158, 40)
+    background-color: rgb(158, 158, 40);
+    position: relative;
+    top:30px;
+  
 }
 .def{
     color: black;
     font-size: 22px;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
+   
+    gap: 12px; 
 }
 .def span{
     font-size: 28px; 
@@ -26,5 +45,7 @@
 }
 
 .child3 {
-    background-color: green
+    background-color: green;
+    position: relative;
+    z-index: 1;
 }
