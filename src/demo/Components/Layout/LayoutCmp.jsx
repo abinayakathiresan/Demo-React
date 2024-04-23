@@ -19,6 +19,11 @@ const Layout = function () {
               </Link>
             </li>
             <li>
+              <Link to="/CSS" >
+                CSS
+              </Link>
+            </li>
+            <li>
               <Link to="/Products" >
                 Products
               </Link>

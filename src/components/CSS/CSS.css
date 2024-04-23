@@ -1,0 +1,30 @@
+.css__child{
+    height: 50px;
+    color: black;
+    font-size: 24px;
+    text-align: center;
+    
+}
+
+.child1 {
+    background-color: rgb(156, 32, 32);
+}
+.child2 {
+    background-color: rgb(158, 158, 40)
+}
+.def{
+    color: black;
+    font-size: 22px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+.def span{
+    font-size: 28px; 
+    padding-right: 24px;
+    display: block;
+}
+
+.child3 {
+    background-color: green
+}

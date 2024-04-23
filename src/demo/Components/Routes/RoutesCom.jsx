@@ -8,12 +8,14 @@ import Counter from "../../../components/Counter/Counter";
 import Fees from "../../../components/Fees/Fees";
 import FeesList from "../../../components/FeesList/FeesList";
 import FeesRedux from "../../../components/FeesRedux/FeesRedux";
+import CSS from "../../../components/CSS/CSS";
 
 const RouteCom = function () {
   return (
     <div className="container">
       <Routes>
         <Route path="/" element={<HomeCom />} exact={true} />
+        <Route path="/CSS" element={<CSS />} exact={true} />
         <Route path="/Products" element={<Products />} exact={true} />
         <Route path="/Posts" element={<Post />} exact={true} />
         <Route path="/Contact Us" element={<ContactCom />} exact={true} />
